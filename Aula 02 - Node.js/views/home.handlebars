@@ -1,0 +1,9 @@
+<h1>Listagem de postagens:</h1>
+
+{{#each posts}}
+<h1>{{dataValues.titulo}}</h1>
+<small>{{dataValues.createdAt}}</small>
+<p>{{dataValues.conteudo}}</p>
+<a href="/delet/{{dataValues.id}}"><button>Excluir</button></a>
+<hr>
+{{/each}}

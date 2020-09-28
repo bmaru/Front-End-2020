@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://svgsilh.com/svg/306277.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+    Veterinária Integrativa
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Pacientes <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/form">Cadastro de Pacientes</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+    <br>
+    <h1>Cadastro de Pacientes</h1>
+    <br>
+    <form action="/add" method="POST">
+
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" class="form-control" name="nome">
+        </div>
+        
+        <div class="form-group">
+            <label>Idade</label>
+            <input type="number" class="form-control" name="idade">
+        </div>
+
+        <div class="form-group">
+            <label>Raça</label>
+            <input type="text" class="form-control" name="raca">
+        </div>
+
+        <div class="form-group">
+            <label>Peso</label>
+            <input type="number" class="form-control" name="peso">
+        </div>
+
+        <div class="form-group">
+            <label>Tutor(a)</label>
+            <input type="text" class="form-control" name="tutor">
+        </div>
+
+        <div class="form-group">
+            <label>Motivo da consulta</label>
+            <input type="text" class="form-control" name="motivo">
+        </div>
+
+        <button type="submit" class="btn btn-primary" >Adicionar</button>
+</form>
+</div>
