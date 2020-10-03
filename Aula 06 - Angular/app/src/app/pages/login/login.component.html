@@ -1,0 +1,16 @@
+<div class="mx-auto mt-5" style="width: 18rem;" >
+    <a routerLink="/home">Home</a>
+    <div class="card p-3" style="width: 18rem;">
+        <form [formGroup]="form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" formControlName="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" formControlName="password" required>
+            </div>
+            <button type="submit" (click)="submit()" [disabled]="!form.valid" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>

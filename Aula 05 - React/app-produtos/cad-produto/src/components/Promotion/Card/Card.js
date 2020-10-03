@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import {Link} from 'react-router-dom';
 
 const PromotionCard = ({ promotion }) => (
 <div class="container p-3">
@@ -21,6 +22,7 @@ const PromotionCard = ({ promotion }) => (
                 { promotion.comments.length}{" "}
                 { promotion.comments.length > 1 ? 'Comentários' : "Avaliação"}
             </div>  
+            <Link to={`/edit/${promotion.id}`} class="btn btn-secondary">Editar</Link>
         </footer>       
     </div>
 </div>

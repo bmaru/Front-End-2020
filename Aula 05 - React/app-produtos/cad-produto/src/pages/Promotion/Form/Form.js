@@ -1,12 +1,13 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
+import PromotionForm from 'components/Promotion/Card/Form'
 
 const PagesPromotionForm = () => {
     const {id} = useParams();
 
     return (
         <div>
-            Formulário genérico...
+            <PromotionForm id={id ? Number.parseInt(id, 10) : null}/>
             {id && <div>id: {id}</div>}
         </div>
     );
