@@ -1,0 +1,44 @@
+<div class="list row">
+    <mat-card>
+        <mat-card-title>Postagens</mat-card-title>
+        <mat-card-content>
+            <div>
+                <mat-form-field appearance="fill">
+                    <input matInput type="text" id="search" name="search" class="form-control"
+                        placeholder="Pesquisar pelo título" [(ngModel)]="title" />
+                </mat-form-field>
+                <button mat-stroked-button type="button" (click)="searchTitle()">
+                    Pesquisar
+                </button>
+                
+                <h4>Listagem de Postagens</h4>
+                <mat-list>
+                    <mat-list-item class="list-group-item" *ngFor="let post of posts; let i = index"
+                        [class.active]="i == currentIndex" (click)="setActivePost(post, i)">{{ post.title }}</mat-list-item>
+                </mat-list>
+                <button (click)="removeAllPosts()" mat-flat-button color="warn">Remover Todas</button>
+                <div>
+                    <div *ngIf="currentPost">
+                        <h4>Postagem</h4>
+                        <div>
+                            <label>Título:</label> {{ currentPost.title }}
+                        </div>
+                        <div>
+                            <label>Descrição:</label>
+                            {{ currentPost.description }}
+                        </div>
+                        <div>
+                            <label>Situação:</label>
+                            {{ currentPost.published ? "Publicada" : "Pendente"}}
+                        </div>
+                        <a mat-flat-button color="primary" routerLink="/posts/{{ currentPost.id }}">Editar</a>
+                    </div>
+                    <div *ngIf="!currentPost">
+                        <p>Por favor, selecione uma postagem.</p>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+  

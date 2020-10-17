@@ -1,0 +1,31 @@
+<mat-card>
+    <div *ngIf="currentPost">
+        <mat-card-title>Postagem</mat-card-title>
+        <mat-card-content>
+           
+                <mat-form-field appearance="fill">
+                    <mat-label for="title">Título</mat-label>
+                    <input matInput type="text" id="title" name="title" [(ngModel)]="currentPost.title">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label for="description">Descrição</mat-label>
+                    <input matInput type="text" id="description" name="description" [(ngModel)]="currentPost.description">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label><strong>Situação:</strong></mat-label>
+                    {{ currentPost.published ? "Publicada" : "Pendente"}}
+                </mat-form-field>
+                <button *ngIf="!currentPost.published" mat-flat-button color="accent" (click)="updatePublished(true)">Publicar</button>
+                <button *ngIf="currentPost.published" mat-flat-button color="accent" (click)="updatePublished(false)">Despublicar</button>
+                
+                <button mat-flat-button color="warn" (click)="deletePost()">Excluir</button>
+                <button mat-flat-button color="primary" (click)="updatePost()">Atualizar</button>
+                <p>{{ message }}</p>
+            
+        </mat-card-content>
+        
+        <div *ngIf="!currentPost">
+            <p>Não foi possível acessar esta postagem.</p>
+        </div>
+    </div>
+</mat-card>

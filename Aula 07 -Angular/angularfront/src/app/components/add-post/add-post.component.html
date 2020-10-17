@@ -1,0 +1,28 @@
+<mat-card>
+    <div *ngIf="!submitted">
+        <mat-card-title>
+            Adicionar
+        </mat-card-title>
+        <mat-card-content>
+            <mat-form-field appearance="fill">
+                <mat-label for="title">Título</mat-label>
+                <input matInput type="text" id="title" name="title" required [(ngModel)]="post.title"/>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-content>
+            <mat-form-field appearance="fill">
+                <mat-label for="title">Descrição</mat-label>
+                <input matInput type="text" id="description" name="description" required [(ngModel)]="post.description">
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-content>
+            <button (click)="savePost()" mat-flat-button color="primary">Salvar</button>
+        </mat-card-content>
+    </div>
+</mat-card>
+<div *ngIf="submitted" >
+    <div class="alert alert-success" role="alert">
+        Registro inserido com sucesso!
+    </div>
+    <button (click)="newPost()" mat-flat-button color="primary">Adicionar</button>
+</div>
